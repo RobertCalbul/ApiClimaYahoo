@@ -24,9 +24,9 @@
             <ColumnDefinition Width="103*"/>
         </Grid.ColumnDefinitions>
         <Image Name="lImageTiempo" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2"/>
-        <Label Name="lTemperature" Content="" Grid.Column="2" Margin="0" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Foreground="White" FontSize="72"/>
-        <Label Name="lCity" Content="" Grid.Column="1" Margin="0" Grid.Row="1" Foreground="White" FontSize="16"/>
-        <Label Name="lDate" Content="" Grid.Column="1" Margin="0" Grid.Row="3" Foreground="White" FontSize="16"/>
+        <Label Name="lTemperature" Content="7ªC" Grid.Column="2" Margin="0" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Foreground="White" FontSize="72"/>
+        <Label Name="lCity" Content="Ciudad" Grid.Column="1" Margin="0" Grid.Row="1" Foreground="White" FontSize="16"/>
+        <Label Name="lDate" Content="DATOS ADICIONALES" Grid.Column="1" Margin="0" Grid.Row="3" Foreground="White" FontSize="16"/>
 
     </Grid>
 </Window>
