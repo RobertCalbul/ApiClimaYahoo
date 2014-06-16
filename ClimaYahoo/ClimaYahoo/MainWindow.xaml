@@ -1,0 +1,32 @@
+﻿<Window x:Class="ClimaYahoo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Clima Yahoo" Height="350" Width="525" ResizeMode="NoResize" Opacity="0.5" AllowsTransparency="True" WindowStyle="None" MinWidth="525" MinHeight="350" MaxWidth="525" MaxHeight="350" MouseLeftButtonDown="Window_MouseLeftButtonDown" OpacityMask="Red">
+    <Window.Background>
+        <ImageBrush Stretch="Uniform" ImageSource="fondo.png"/>
+    </Window.Background>
+    <Window.Effect>
+        <DropShadowEffect/>
+    </Window.Effect>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="32*"/>
+            <RowDefinition Height="109*"/>
+            <RowDefinition Height="116*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="145*"/>
+            <ColumnDefinition Width="158*"/>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="91*"/>
+            <ColumnDefinition Width="103*"/>
+        </Grid.ColumnDefinitions>
+        <Image Name="lImageTiempo" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2"/>
+        <Label Name="lTemperature" Content="" Grid.Column="2" Margin="0" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Foreground="White" FontSize="72"/>
+        <Label Name="lCity" Content="" Grid.Column="1" Margin="0" Grid.Row="1" Foreground="White" FontSize="16"/>
+        <Label Name="lDate" Content="" Grid.Column="1" Margin="0" Grid.Row="3" Foreground="White" FontSize="16"/>
+
+    </Grid>
+</Window>
