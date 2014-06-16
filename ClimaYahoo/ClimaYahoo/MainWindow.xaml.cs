@@ -26,16 +26,18 @@ namespace ClimaYahoo
             InitializeComponent();
             Load_Clima();
         }
+        //METODO QUE CARGARA CLIMA
         public void Load_Clima() {
-            XmlDocument pagina = new XmlDocument();
-            pagina.Load("http://weather.yahooapis.com/forecastrss?w=349871&u=c");
+            XmlDocument pagina = new XmlDocument();//INSTANCIA XML
+            pagina.Load("http://weather.yahooapis.com/forecastrss?w=349871&u=c");//LEE LA PAGINA (API)
 
             XmlNamespaceManager man = new XmlNamespaceManager(pagina.NameTable);
-            man.AddNamespace("yweather", "http://xml.weather.yahoo.com/ns/rss/1.0");
+            man.AddNamespace("yweather", "http://xml.weather.yahoo.com/ns/rss/1.0");//AGREGA DIRECCION 
             String[] diasEng = { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" };
             String[] diasEs = { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo" };
 
-            XmlNode chanel = pagina.SelectSingleNode("rss").SelectSingleNode("channel");
+            XmlNode chanel = pagina.SelectSingleNode("rss").SelectSingleNode("channel");//OBTIENE LAS ETIQUETAS
+            //OBTIENE LOS DATOS DE ACUERDO A LA API
             String build = chanel.SelectSingleNode("lastBuildDate").InnerText;
             String cuidad = chanel.SelectSingleNode("yweather:location", man).Attributes["city"].Value;
             String region = chanel.SelectSingleNode("yweather:location", man).Attributes["region"].Value;
@@ -47,6 +49,7 @@ namespace ClimaYahoo
             String sunset = chanel.SelectSingleNode("yweather:astronomy", man).Attributes["sunset"].Value;
             String cdata = chanel.SelectSingleNode("item", man).SelectSingleNode("description").InnerText;//.InnerText;
 
+            //SETEO DE DATOS A PANTALLA
             this.lCity.Content = cuidad + ", " + country;//CIUDAD, PAIN
             this.lDate.Content = build.Substring(0, 3) + ", " + build.Substring(16, 5);//CARGA EL DIA EN ESPAÑOL
             this.lDate.Content += "\n" + humidity;
@@ -60,7 +63,7 @@ namespace ClimaYahoo
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            this.DragMove();
+            this.DragMove();//SE PUEDE MOVER LA PANTALLA
         }
     }
 }
